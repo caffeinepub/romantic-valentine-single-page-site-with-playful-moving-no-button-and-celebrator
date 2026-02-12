@@ -1,0 +1,165 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Single-page romantic Valentine website with playful moving 'No' button, growing centered 'Yes' button, smooth animations, hearts background, and a celebratory final modal with optional music and confetti.",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Seamless romantic pastel hearts background pattern (valentine-hearts-bg.dim_1920x1080.png)\n- Small heart confetti particle (heart-confetti-particle.dim_64x64.png)\n- Soft glowing heart icon (glow-heart-icon.dim_128x128.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-single-page-mobile-first-valentine-website-with-a-soft-romantic-visual-theme-pink-red-pastels-and-a-clean-playful-emotional-vibe-applied-consistently-across-typography-spacing-and-components",
+      "title": "Create a single-page, mobile-first Valentine website with a soft romantic visual theme (pink/red/pastels) and a clean, playful, emotional vibe applied consistently across typography, spacing, and components.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-initial-screen-content-centered-on-the-page-with-the-exact-prompt-text-will-you-be-my-valentine-and-two-buttons-yes-and-no-the-yes-button-must-remain-centered-fixed-anchored-at-all-times",
+      "title": "Implement the initial screen content centered on the page with the exact prompt text: “Will you be my Valentine? ❤️” and two buttons: “Yes 💖” and “No 🙃”. The “Yes 💖” button must remain centered (fixed/anchored) at all times.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-no-button-evasive-behavior-on-hover-or-click-animate-the-button-to-a-new-position-on-screen-that-feels-playful-fast-and-unpredictable-allowed-positions-must-include-edges-left-right-top-bottom-corners-and-random-x-y-positions-while-keeping-the-button-fully-within-the-viewport-bounds",
+      "title": "Implement the “No” button evasive behavior: on hover OR click, animate the button to a new position on screen that feels playful, fast, and unpredictable. Allowed positions must include edges (left/right/top/bottom), corners, and random X/Y positions, while keeping the button fully within the viewport bounds.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-moving-button-text-progression-for-the-evasive-button-advancing-after-each-triggered-move-attempt-in-this-order-1-no-2-are-you-sure-3-one-last-chance-4-yes-after-reaching-yes-keep-the-button-moving-do-not-stop-the-evasive-behavior",
+      "title": "Implement the moving button text progression for the evasive button, advancing after each triggered move attempt in this order: (1) “No 🙃”, (2) “Are you sure? 😏”, (3) “One last chance 😢”, (4) “Yes ❤️”. After reaching “Yes ❤️”, keep the button moving (do not stop the evasive behavior).",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-yes-button-scaling-behavior-every-time-the-user-triggers-an-evasive-no-attempt-hover-or-click-the-centered-yes-button-grows-slightly-larger-using-a-smooth-scale-animation-add-subtle-bounce-scale-micro-interactions-on-button-hover-press-for-both-buttons",
+      "title": "Implement the “Yes 💖” button scaling behavior: every time the user triggers an evasive “No” attempt (hover or click), the centered “Yes 💖” button grows slightly larger, using a smooth scale animation. Add subtle bounce/scale micro-interactions on button hover/press for both buttons.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-floating-hearts-background-effect-behind-the-main-content-with-smooth-animation-matching-the-soft-romantic-theme-and-not-obstructing-readability-of-the-centered-text-buttons",
+      "title": "Add a floating hearts background effect behind the main content with smooth animation, matching the soft romantic theme and not obstructing readability of the centered text/buttons.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-on-yes-click-show-a-full-screen-modal-or-full-screen-success-section-with-smooth-fade-zoom-transition-containing-the-exact-romantic-message-congratulations-i-knew-you-d-say-yes-you-just-made-my-day-i-love-you-so-much-happy-valentine-s-day",
+      "title": "On “Yes 💖” click, show a full-screen modal or full-screen success section with smooth fade/zoom transition containing the exact romantic message:\n“Congratulations ❤️🎉\nI knew you’d say yes!\nYou just made my day.\nI love you so much 😘\nHappy Valentine’s Day 💕”",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-heart-confetti-effect-on-the-final-success-screen-triggered-when-the-success-modal-section-appears",
+      "title": "Add a heart confetti effect on the final success screen (triggered when the success modal/section appears).",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-optional-soft-romantic-background-music-with-autoplay-safe-behavior-do-not-hard-autoplay-audio-with-sound-on-page-load-provide-a-clear-play-pause-control-and-start-playback-only-after-a-user-gesture",
+      "title": "Add optional soft romantic background music with autoplay-safe behavior: do not hard-autoplay audio with sound on page load; provide a clear play/pause control and start playback only after a user gesture.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-and-render-required-static-image-assets-in-the-frontend-stored-under-frontend-public-assets-generated-to-support-the-romantic-theme-hearts-background-particles-confetti",
+      "title": "Add and render required static image assets in the frontend (stored under frontend/public/assets/generated) to support the romantic theme (hearts background/particles/confetti).",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-deliverable-is-clean-readable-and-ready-to-deploy-as-a-shareable-single-page-site-no-broken-builds-no-placeholder-content",
+      "title": "Ensure the deliverable is clean, readable, and ready to deploy as a shareable single-page site (no broken builds, no placeholder content).",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create single-page mobile-first romantic Valentine website with soft pastel/pink/red theme and clean emotional vibe",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Add floating hearts background effect with smooth animations",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Initial screen: centered prompt text 'Will you be my Valentine? ❤️' with two buttons (Yes centered, No movable)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Implement 'Yes 💖' button behavior: always centered, scales up slightly after each failed 'No' attempt, smooth scale animation",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Implement 'No 🙃' button behavior: on hover or click moves unpredictably to new positions (edges/corners/random X/Y) with smooth transition",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Implement moving-button text progression: 'No 🙃' → 'Are you sure? 😏' → 'One last chance 😢' → 'Yes ❤️' (still moving)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "On 'Yes 💖' click, show full-screen modal/section with romantic success message and smooth fade/zoom transition",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Add heart confetti effect on final screen",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Optional: add soft romantic background music with appropriate controls/autoplay-safe behavior",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Add button bounce/scale micro-interactions and ensure clean readable deploy-ready code",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Romantic Valentine single-page site with playful moving 'No' button and celebratory modal",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

@@ -1,0 +1,223 @@
+{
+  "kind": "build_request",
+  "title": "Romantic Valentine single-page site with playful moving 'No' button and celebratory modal",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a single-page, mobile-first Valentine website with a soft romantic visual theme (pink/red/pastels) and a clean, playful, emotional vibe applied consistently across typography, spacing, and components.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Create a romantic Valentine single-page website for my girlfriend.\n\nDesign & Style:\n • Soft romantic theme (pink, red, pastel)\n • Cute hearts floating in background\n • Smooth animations\n • Mobile-first responsive layout\n • Clean, playful, emotional vibe"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Layout is responsive and looks polished on common mobile widths (e.g., 360px) up to desktop.",
+        "Theme uses soft romantic colors (pink/red/pastels) and consistent typography/spacing.",
+        "App is a single page (no multi-page routing required)."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement the initial screen content centered on the page with the exact prompt text: “Will you be my Valentine? ❤️” and two buttons: “Yes 💖” and “No 🙃”. The “Yes 💖” button must remain centered (fixed/anchored) at all times.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Initial Screen:\n • Center text:\n“Will you be my Valentine? ❤️”\n • Two buttons:\n • Yes 💖 (fixed position, center)\n • No 🙃 (this button should move)"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The prompt text matches exactly: “Will you be my Valentine? ❤️”.",
+        "Two buttons are visible with labels “Yes 💖” and “No 🙃”.",
+        "The “Yes 💖” button remains centered regardless of viewport size and regardless of “No” button movement."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Implement the “No” button evasive behavior: on hover OR click, animate the button to a new position on screen that feels playful, fast, and unpredictable. Allowed positions must include edges (left/right/top/bottom), corners, and random X/Y positions, while keeping the button fully within the viewport bounds.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "2. The No button behavior:\n • On hover OR click, it should randomly move to a new position on the screen\n • Positions can be: left, right, top, bottom, corners, random X/Y\n • Movement should feel playful, fast, and unpredictable\n • Smooth transition, not instant teleport"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Hovering over the “No” button causes it to move to a new position with an animated transition (not an instant teleport).",
+        "Clicking the “No” button also triggers movement (even if hover already does).",
+        "At least: edges, corners, and free random X/Y placements are used over repeated attempts.",
+        "The “No” button never renders partially off-screen (it stays fully visible)."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Implement the moving button text progression for the evasive button, advancing after each triggered move attempt in this order: (1) “No 🙃”, (2) “Are you sure? 😏”, (3) “One last chance 😢”, (4) “Yes ❤️”. After reaching “Yes ❤️”, keep the button moving (do not stop the evasive behavior).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "3. Text progression for the moving button:\n • First: No 🙃\n • Then: Are you sure? 😏\n • Then: One last chance 😢\n • After that: Yes ❤️ (still moving)"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The evasive button label starts as “No 🙃”.",
+        "After successive move triggers, the label progresses exactly: “Are you sure? 😏” → “One last chance 😢” → “Yes ❤️”.",
+        "After the label becomes “Yes ❤️”, the evasive movement still triggers on hover/click."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Implement the “Yes 💖” button scaling behavior: every time the user triggers an evasive “No” attempt (hover or click), the centered “Yes 💖” button grows slightly larger, using a smooth scale animation. Add subtle bounce/scale micro-interactions on button hover/press for both buttons.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "1. The Yes button:\n • Always stays in the center\n • Grows slightly bigger after every failed “No” attempt\n • Smooth scale animation\n\nExtra Effects:\n • Button bounce and scale animations"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Each time the evasive “No” behavior is triggered, the “Yes 💖” button scale increases by a small increment (cumulative).",
+        "Scaling changes animate smoothly (no abrupt jumps).",
+        "Buttons have noticeable but tasteful hover/press micro-interactions (bounce/scale)."
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Add a floating hearts background effect behind the main content with smooth animation, matching the soft romantic theme and not obstructing readability of the centered text/buttons.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "• Cute hearts floating in background\n • Smooth animations"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Hearts visibly float/animate in the background on both mobile and desktop.",
+        "Foreground content remains legible; background effect does not overpower text/buttons.",
+        "Animations run smoothly without major stutter."
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "On “Yes 💖” click, show a full-screen modal or full-screen success section with smooth fade/zoom transition containing the exact romantic message:\n“Congratulations ❤️🎉\nI knew you’d say yes!\nYou just made my day.\nI love you so much 😘\nHappy Valentine’s Day 💕”",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Final Action:\n • When Yes 💖 is clicked:\n • Open a full-screen modal or new section\n • Romantic message:\n“Congratulations ❤️🎉\nI knew you’d say yes!\nYou just made my day.\nI love you so much 😘\nHappy Valentine’s Day 💕”\n\nExtra Effects:\n • Smooth fade / zoom transitions"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Clicking “Yes 💖” transitions to a full-screen modal/section.",
+        "The displayed message matches exactly (same text and line breaks).",
+        "Transition uses smooth fade/zoom animation (no abrupt screen change)."
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Add a heart confetti effect on the final success screen (triggered when the success modal/section appears).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Extra Effects:\n • Heart confetti on final screen"
+        ]
+      },
+      "acceptanceCriteria": [
+        "When success screen appears, heart confetti animates on top of the UI.",
+        "Confetti is visually heart-shaped and fits the romantic theme.",
+        "Confetti does not block the message for an extended duration (either fades out or becomes subtle)."
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Add optional soft romantic background music with autoplay-safe behavior: do not hard-autoplay audio with sound on page load; provide a clear play/pause control and start playback only after a user gesture.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "• Soft romantic background music (optional)"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A visible music control (play/pause) exists.",
+        "Audio starts only after the user interacts (e.g., presses play or another explicit gesture).",
+        "Music can be paused/stopped by the user."
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Add and render required static image assets in the frontend (stored under frontend/public/assets/generated) to support the romantic theme (hearts background/particles/confetti).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "• Cute hearts floating in background\n • Heart confetti on final screen\n\nDeliverable:\n • Fully functional website"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All required generated image assets exist under frontend/public/assets/generated and are referenced by the UI.",
+        "The app loads and renders correctly without missing-asset errors.",
+        "Background hearts/confetti use the provided assets (directly or as part of the visual system)."
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "text": "Ensure the deliverable is clean, readable, and ready to deploy as a shareable single-page site (no broken builds, no placeholder content).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Deliverable:\n • Fully functional website\n • Clean readable code\n • Ready to deploy and share link"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Project builds successfully and runs without runtime errors.",
+        "Code is organized and readable (clear components/hooks, minimal duplication).",
+        "No placeholder text/assets remain in the final UI."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not edit files under frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, or any files under frontend/src/components/ui (compose them instead).",
+    "Keep the application single-page; do not add multi-page routing unless strictly necessary for the requested behavior."
+  ],
+  "nonGoals": [
+    "Internet Identity authentication or any user accounts.",
+    "Backend canister logic or persistence (no data storage is required for this single-page experience).",
+    "External API integrations or third-party analytics."
+  ],
+  "imageRequirements": {
+    "required": [
+      "Seamless romantic pastel hearts background pattern (valentine-hearts-bg.dim_1920x1080.png)",
+      "Small heart confetti particle (heart-confetti-particle.dim_64x64.png)",
+      "Soft glowing heart icon (glow-heart-icon.dim_128x128.png)"
+    ],
+    "edits": []
+  }
+}

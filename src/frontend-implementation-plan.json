@@ -1,0 +1,279 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Valentine single-page with evasive No button, hearts background, success modal, confetti, and music control",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Single-page mobile-first romantic theme with consistent typography, spacing, and playful vibe",
+      "acceptanceCriteria": [
+        "Layout is responsive and looks polished on common mobile widths (e.g., 360px) up to desktop.",
+        "Theme uses soft romantic colors (pink/red/pastels) and consistent typography/spacing.",
+        "App is a single page (no multi-page routing required)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Create the single-page app shell that renders the Valentine experience (no routing) and establishes the top-level layout structure for mobile-first responsiveness."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "create",
+          "description": "Create global styles using existing entrypoint to apply a soft romantic palette (pink/red/pastels), consistent typography/spacing, and shared animation utilities for the single-page UI."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme tokens (colors/radii/shadows/animations) to support the romantic design system consistently across components."
+        },
+        {
+          "path": "frontend/src/components/ValentinePage.tsx",
+          "operation": "create",
+          "description": "Create the main single-page Valentine view component that owns layout composition (background + centered content + controls) and ensures mobile-first responsiveness."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Centered prompt with Yes/No buttons; Yes stays anchored centered at all times",
+      "acceptanceCriteria": [
+        "The prompt text matches exactly: “Will you be my Valentine? ❤️”.",
+        "Two buttons are visible with labels “Yes 💖” and “No 🙃”.",
+        "The “Yes 💖” button remains centered regardless of viewport size and regardless of “No” button movement."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ValentinePage.tsx",
+          "operation": "modify",
+          "description": "Implement the centered prompt text exactly (“Will you be my Valentine? ❤️”) and render two buttons: a centered/anchored “Yes 💖” and an evasive “No 🙃”. Use the shadcn-ui Button component for consistent styling and interactions; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire the ValentinePage as the only rendered view to keep the app single-page and ensure the centered layout is always present."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Evasive No button: hover/click moves smoothly to unpredictable positions within viewport bounds",
+      "acceptanceCriteria": [
+        "Hovering over the “No” button causes it to move to a new position with an animated transition (not an instant teleport).",
+        "Clicking the “No” button also triggers movement (even if hover already does).",
+        "At least: edges, corners, and free random X/Y placements are used over repeated attempts.",
+        "The “No” button never renders partially off-screen (it stays fully visible)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ValentinePage.tsx",
+          "operation": "modify",
+          "description": "Add evasive movement logic for the moving button on hover and click: compute next positions including edges, corners, and random X/Y, and clamp to viewport so the button remains fully visible. Apply smooth animated transitions (e.g., via CSS transition on transform/position) so it does not teleport."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add reusable animation/transition classes (fast, playful easing) used by the evasive button movement to ensure smooth motion."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Moving button label progression across move attempts, continuing evasive behavior after reaching final label",
+      "acceptanceCriteria": [
+        "The evasive button label starts as “No 🙃”.",
+        "After successive move triggers, the label progresses exactly: “Are you sure? 😏” → “One last chance 😢” → “Yes ❤️”.",
+        "After the label becomes “Yes ❤️”, the evasive movement still triggers on hover/click."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ValentinePage.tsx",
+          "operation": "modify",
+          "description": "Track the evasive button move-attempt count and update its label in the exact required order: “No 🙃” → “Are you sure? 😏” → “One last chance 😢” → “Yes ❤️”, while keeping evasive behavior active even after the final label."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Yes button grows slightly after each No attempt; add tasteful hover/press micro-interactions on both buttons",
+      "acceptanceCriteria": [
+        "Each time the evasive “No” behavior is triggered, the “Yes 💖” button scale increases by a small increment (cumulative).",
+        "Scaling changes animate smoothly (no abrupt jumps).",
+        "Buttons have noticeable but tasteful hover/press micro-interactions (bounce/scale)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ValentinePage.tsx",
+          "operation": "modify",
+          "description": "Increment a cumulative scale factor for the centered “Yes 💖” button on every evasive “No” trigger (hover/click), and animate the scale smoothly. Add hover/press micro-interactions (bounce/scale) for both buttons using shadcn-ui Button composition; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add CSS keyframes/utility classes for subtle bounce/press interactions and smooth scaling transitions applied by the ValentinePage buttons."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Floating hearts background effect behind content with smooth animation and preserved readability",
+      "acceptanceCriteria": [
+        "Hearts visibly float/animate in the background on both mobile and desktop.",
+        "Foreground content remains legible; background effect does not overpower text/buttons.",
+        "Animations run smoothly without major stutter."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/FloatingHeartsBackground.tsx",
+          "operation": "create",
+          "description": "Create a background layer that renders softly animated floating hearts behind the main content, using the generated romantic assets and ensuring legibility via opacity/blur/contrast controls."
+        },
+        {
+          "path": "frontend/src/components/ValentinePage.tsx",
+          "operation": "modify",
+          "description": "Compose FloatingHeartsBackground behind the centered prompt/buttons, ensuring correct stacking order so it does not obstruct readability."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add background animation keyframes and styling helpers (opacity, blur, reduced-motion handling) used by the floating hearts layer."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "On Yes click, show full-screen modal/section with exact romantic message and fade/zoom transition",
+      "acceptanceCriteria": [
+        "Clicking “Yes 💖” transitions to a full-screen modal/section.",
+        "The displayed message matches exactly (same text and line breaks).",
+        "Transition uses smooth fade/zoom animation (no abrupt screen change)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/SuccessDialog.tsx",
+          "operation": "create",
+          "description": "Create a full-screen success modal component that displays the exact message with preserved line breaks and uses smooth fade/zoom transitions. Use shadcn-ui Dialog for accessible modal behavior; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/ValentinePage.tsx",
+          "operation": "modify",
+          "description": "Open the full-screen success modal/section when “Yes 💖” is clicked and ensure the modal covers the entire viewport."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add/adjust transition classes for the success full-screen fade/zoom animation (and respect reduced-motion preferences)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Heart confetti effect triggered when success screen appears",
+      "acceptanceCriteria": [
+        "When success screen appears, heart confetti animates on top of the UI.",
+        "Confetti is visually heart-shaped and fits the romantic theme.",
+        "Confetti does not block the message for an extended duration (either fades out or becomes subtle)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/HeartConfetti.tsx",
+          "operation": "create",
+          "description": "Create a heart-shaped confetti overlay component (using the generated heart particle asset) that animates on top of the success UI and fades out/becomes subtle after a short duration."
+        },
+        {
+          "path": "frontend/src/components/SuccessDialog.tsx",
+          "operation": "modify",
+          "description": "Trigger HeartConfetti when the success modal opens, ensuring the confetti layer does not permanently obscure the message."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add confetti animation keyframes and styling utilities used by the HeartConfetti overlay."
+        }
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "summary": "Optional romantic background music with autoplay-safe play/pause control (starts only after user gesture)",
+      "acceptanceCriteria": [
+        "A visible music control (play/pause) exists.",
+        "Audio starts only after the user interacts (e.g., presses play or another explicit gesture).",
+        "Music can be paused/stopped by the user."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/MusicControl.tsx",
+          "operation": "create",
+          "description": "Create a play/pause UI control that starts audio only after an explicit user gesture (autoplay-safe) and allows pausing/stopping. Implement using browser audio APIs without hard-autoplay on page load."
+        },
+        {
+          "path": "frontend/src/components/ValentinePage.tsx",
+          "operation": "modify",
+          "description": "Render the MusicControl in the single-page UI (e.g., a small corner control) ensuring it remains visible and does not interfere with the main prompt/buttons."
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Add and render required generated static image assets for hearts background/particles/confetti",
+      "acceptanceCriteria": [
+        "All required generated image assets exist under frontend/public/assets/generated and are referenced by the UI.",
+        "The app loads and renders correctly without missing-asset errors.",
+        "Background hearts/confetti use the provided assets (directly or as part of the visual system)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/valentine-hearts-bg.dim_1920x1080.png",
+          "operation": "create",
+          "description": "Add the required generated asset file for the seamless romantic pastel hearts background pattern."
+        },
+        {
+          "path": "frontend/public/assets/generated/heart-confetti-particle.dim_64x64.png",
+          "operation": "create",
+          "description": "Add the required generated asset file for the small heart confetti particle."
+        },
+        {
+          "path": "frontend/public/assets/generated/glow-heart-icon.dim_128x128.png",
+          "operation": "create",
+          "description": "Add the required generated asset file for the soft glowing heart icon."
+        },
+        {
+          "path": "frontend/src/components/FloatingHeartsBackground.tsx",
+          "operation": "modify",
+          "description": "Reference frontend/public/assets/generated/valentine-hearts-bg.dim_1920x1080.png and frontend/public/assets/generated/glow-heart-icon.dim_128x128.png within the background effect implementation (as static assets)."
+        },
+        {
+          "path": "frontend/src/components/HeartConfetti.tsx",
+          "operation": "modify",
+          "description": "Reference frontend/public/assets/generated/heart-confetti-particle.dim_64x64.png in the confetti particle rendering."
+        }
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "summary": "Clean, readable, deploy-ready single-page deliverable with no broken builds or placeholder content",
+      "acceptanceCriteria": [
+        "Project builds successfully and runs without runtime errors.",
+        "Code is organized and readable (clear components/hooks, minimal duplication).",
+        "No placeholder text/assets remain in the final UI."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Ensure the app composes only the intended single-page experience, keeps code organized, and avoids unused/dead UI paths."
+        },
+        {
+          "path": "frontend/src/components/ValentinePage.tsx",
+          "operation": "modify",
+          "description": "Refactor/organize state and handlers (evasive movement, label progression, yes scaling, modal open) into readable structure with minimal duplication."
+        },
+        {
+          "path": "frontend/src/components/SuccessDialog.tsx",
+          "operation": "modify",
+          "description": "Ensure success UI is complete, readable, and matches the exact message content (no placeholders)."
+        }
+      ]
+    }
+  ]
+}

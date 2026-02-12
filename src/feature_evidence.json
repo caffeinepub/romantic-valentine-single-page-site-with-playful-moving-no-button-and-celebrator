@@ -1,0 +1,219 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-single-page-mobile-first-valentine-website-with-a-soft-romantic-visual-theme-pink-red-pastels-and-a-clean-playful-emotional-vibe-applied-consistently-across-typography-spacing-and-components",
+      "featureTitle": "Create a single-page, mobile-first Valentine website with a soft romantic visual theme (pink/red/pastels) and a clean, playful, emotional vibe applied consistently across typography, spacing, and components.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/ValentinePage.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-the-initial-screen-content-centered-on-the-page-with-the-exact-prompt-text-will-you-be-my-valentine-and-two-buttons-yes-and-no-the-yes-button-must-remain-centered-fixed-anchored-at-all-times",
+      "featureTitle": "Implement the initial screen content centered on the page with the exact prompt text: “Will you be my Valentine? ❤️” and two buttons: “Yes 💖” and “No 🙃”. The “Yes 💖” button must remain centered (fixed/anchored) at all times.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/ValentinePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-the-no-button-evasive-behavior-on-hover-or-click-animate-the-button-to-a-new-position-on-screen-that-feels-playful-fast-and-unpredictable-allowed-positions-must-include-edges-left-right-top-bottom-corners-and-random-x-y-positions-while-keeping-the-button-fully-within-the-viewport-bounds",
+      "featureTitle": "Implement the “No” button evasive behavior: on hover OR click, animate the button to a new position on screen that feels playful, fast, and unpredictable. Allowed positions must include edges (left/right/top/bottom), corners, and random X/Y positions, while keeping the button fully within the viewport bounds.",
+      "files": [
+        "frontend/src/components/ValentinePage.tsx",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-the-moving-button-text-progression-for-the-evasive-button-advancing-after-each-triggered-move-attempt-in-this-order-1-no-2-are-you-sure-3-one-last-chance-4-yes-after-reaching-yes-keep-the-button-moving-do-not-stop-the-evasive-behavior",
+      "featureTitle": "Implement the moving button text progression for the evasive button, advancing after each triggered move attempt in this order: (1) “No 🙃”, (2) “Are you sure? 😏”, (3) “One last chance 😢”, (4) “Yes ❤️”. After reaching “Yes ❤️”, keep the button moving (do not stop the evasive behavior).",
+      "files": [
+        "frontend/src/components/ValentinePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-the-yes-button-scaling-behavior-every-time-the-user-triggers-an-evasive-no-attempt-hover-or-click-the-centered-yes-button-grows-slightly-larger-using-a-smooth-scale-animation-add-subtle-bounce-scale-micro-interactions-on-button-hover-press-for-both-buttons",
+      "featureTitle": "Implement the “Yes 💖” button scaling behavior: every time the user triggers an evasive “No” attempt (hover or click), the centered “Yes 💖” button grows slightly larger, using a smooth scale animation. Add subtle bounce/scale micro-interactions on button hover/press for both buttons.",
+      "files": [
+        "frontend/src/components/ValentinePage.tsx",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-floating-hearts-background-effect-behind-the-main-content-with-smooth-animation-matching-the-soft-romantic-theme-and-not-obstructing-readability-of-the-centered-text-buttons",
+      "featureTitle": "Add a floating hearts background effect behind the main content with smooth animation, matching the soft romantic theme and not obstructing readability of the centered text/buttons.",
+      "files": [
+        "frontend/src/components/FloatingHeartsBackground.tsx",
+        "frontend/src/components/ValentinePage.tsx",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-on-yes-click-show-a-full-screen-modal-or-full-screen-success-section-with-smooth-fade-zoom-transition-containing-the-exact-romantic-message-congratulations-i-knew-you-d-say-yes-you-just-made-my-day-i-love-you-so-much-happy-valentine-s-day",
+      "featureTitle": "On “Yes 💖” click, show a full-screen modal or full-screen success section with smooth fade/zoom transition containing the exact romantic message:\n“Congratulations ❤️🎉\nI knew you’d say yes!\nYou just made my day.\nI love you so much 😘\nHappy Valentine’s Day 💕”",
+      "files": [
+        "frontend/src/components/SuccessDialog.tsx",
+        "frontend/src/components/ValentinePage.tsx",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-heart-confetti-effect-on-the-final-success-screen-triggered-when-the-success-modal-section-appears",
+      "featureTitle": "Add a heart confetti effect on the final success screen (triggered when the success modal/section appears).",
+      "files": [
+        "frontend/src/components/HeartConfetti.tsx",
+        "frontend/src/components/SuccessDialog.tsx",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-optional-soft-romantic-background-music-with-autoplay-safe-behavior-do-not-hard-autoplay-audio-with-sound-on-page-load-provide-a-clear-play-pause-control-and-start-playback-only-after-a-user-gesture",
+      "featureTitle": "Add optional soft romantic background music with autoplay-safe behavior: do not hard-autoplay audio with sound on page load; provide a clear play/pause control and start playback only after a user gesture.",
+      "files": [
+        "frontend/src/components/MusicControl.tsx",
+        "frontend/src/components/ValentinePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-9"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-and-render-required-static-image-assets-in-the-frontend-stored-under-frontend-public-assets-generated-to-support-the-romantic-theme-hearts-background-particles-confetti",
+      "featureTitle": "Add and render required static image assets in the frontend (stored under frontend/public/assets/generated) to support the romantic theme (hearts background/particles/confetti).",
+      "files": [
+        "frontend/src/components/FloatingHeartsBackground.tsx",
+        "frontend/src/components/HeartConfetti.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-10"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-ensure-the-deliverable-is-clean-readable-and-ready-to-deploy-as-a-shareable-single-page-site-no-broken-builds-no-placeholder-content",
+      "featureTitle": "Ensure the deliverable is clean, readable, and ready to deploy as a shareable single-page site (no broken builds, no placeholder content).",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/SuccessDialog.tsx",
+        "frontend/src/components/ValentinePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-11"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

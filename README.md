@@ -1,2 +1,3 @@
-# romantic-valentine-single-page-site-with-playful-moving-no-button-and-celebrator
-Exported from Caffeine project: Romantic Valentine single-page site with playful moving 'No' button and celebratory modal
+## Romantic Valentine single-page site with playful moving &#x27;No&#x27; button and celebratory modal
+
+To run app build and run docker image: `docker build -t app . docker run -it --network host app`

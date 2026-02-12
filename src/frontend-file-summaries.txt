@@ -1,0 +1,10 @@
+{
+  "frontend/src/App.tsx": "Main application entry component that renders the single-page Valentine experience.",
+  "frontend/src/components/ValentinePage.tsx": "Core Valentine page component managing the interactive \"Yes/No\" button game with evasive movement, scaling, label progression, and success modal trigger.",
+  "frontend/src/components/FloatingHeartsBackground.tsx": "Canvas-based animated background rendering floating hearts that drift upward with smooth motion, now with properly typed animation frame ref.",
+  "frontend/src/components/SuccessDialog.tsx": "Full-screen success modal displaying the romantic congratulations message with confetti effect when opened.",
+  "frontend/src/components/HeartConfetti.tsx": "Canvas-based heart-shaped confetti particle system that animates and fades out over time, now with properly typed animation frame ref.",
+  "frontend/src/components/MusicControl.tsx": "Floating music control button using Web Audio API to generate soft romantic tones with user-triggered play/pause.",
+  "frontend/src/index.css": "Global styles defining romantic OKLCH color palette (pink/red/pastels), custom animations (gradient-shift, pulse-glow, float, zoom-in, fade-in-up), and component-specific styling.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with romantic color tokens, custom border radius, romantic shadow utilities, and animation keyframes."
+}
